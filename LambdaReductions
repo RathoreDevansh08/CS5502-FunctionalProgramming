@@ -1,0 +1,10 @@
+#1> ((λx.(x y))(λz.z))          				  ->  y
+#2> ((λx.((λy.(x y))x))(λz.w))  				  ->  w
+#3> ((λx.(x x))(λx.(x x)))      				  ->  CAN'T REDUCE
+#4> (λg.((λf.((λx.(f (x x)))(λx.(f (x x))))) g))  ->  CAN'T REDUCE
+#5> (λx.x+1)3									  ->  4
+#6> (λx.x+1)((λy.y+2)3)							  ->  6
+#7> λx.λy. x^47 y								  ->  47 (Church Encoding)
+#8> λx.λy.x(xy)									  ->  2  (Church Encoding)
+#9> λx.λy.y 									  ->  0  (Church Encoding)
+
