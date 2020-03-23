@@ -1,0 +1,26 @@
+>> BASE
+
+GHC itself ships with a variety of core libraries that are loaded into all Haskell projects. The most foundational of these is base which forms the foundation for all Haskell code. The base library is split across several modules:
+> Prelude - The default namespace imported in every module.
+> Data - The simple data structures wired into the language
+> Control - Control flow functions
+> Foreign - Foreign function interface
+> Numeric - Numerical tower and arithmetic operations
+> System - System operations for Linux/Mac/Windows
+> Text - Basic String types.
+> Type - Typelevel operations
+> GHC - GHC Internals
+> Debug - Debug functions
+> Unsafe - Unsafe “backdoor” operations
+
+
+>> PRELUDE
+
+The Prelude is the default standard module. The Prelude is imported by default into all Haskell modules unless either there is an explicit import statement for it, or the NoImplicitPrelude extension is enabled.
+
+The Prelude exports several hundred symbols that are the default datatypes and functions for libraries that use the GHC-issued prelude. Although the Prelude is the default import, many libraries these days do not use the standard prelude instead choosing to roll a custom one on a per-project basis or to use an off-the shelf prelude from Hackage.
+
+The Prelude contains common datatype and classes such as List, Monad, Maybe and most associated functions for manipulating these structures. These are the most foundational programming constructs in Haskell.
+
+
+
