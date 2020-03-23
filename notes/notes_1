@@ -1,3 +1,5 @@
+## About using Haskell
+
 >> BASE
 
 GHC itself ships with a variety of core libraries that are loaded into all Haskell projects. The most foundational of these is base which forms the foundation for all Haskell code. The base library is split across several modules:
@@ -22,5 +24,48 @@ The Prelude exports several hundred symbols that are the default datatypes and f
 
 The Prelude contains common datatype and classes such as List, Monad, Maybe and most associated functions for manipulating these structures. These are the most foundational programming constructs in Haskell.
 
+
+>> GHCi
+
+GHCi is the interactive shell for the GHC compiler. GHCi is where we will spend most of our time in everyday development. Following is a table of useful GHCi commands.
+
+Command		Shortcut	Action
+:reload		:r			Code reload
+:type		:t			Type inspection
+:kind		:k			Kind inspection
+:info		:i			Information
+:print		:p			Print the expression
+:edit		:e			Load file in system editor
+:load		:l			Set the active Main module in the REPL
+:module		:m			Add modules to imports
+:add		:ad			Load a file into the REPL namespace
+:instances	:in			Show instances of a typeclass
+:browse		:bro		Browse all available symbols in the REPL namespace
+
+The introspection commands are an essential part of debugging and interacting with Haskell code:
+
+> λ: :type 3
+  3 :: Num a => a
+
+> λ: :kind Either
+  Either :: * -> * -> *
+
+> λ: :info Functor
+  class Functor f where
+    fmap :: (a -> b) -> f a -> f b
+    (<$) :: a -> f b -> f a
+          -- Defined in `GHC.Base'
+    ...
+
+> λ: :i (:)
+  data [] a = ... | a : [a]       -- Defined in `GHC.Types'
+  infixr 5 :
+
+To examine module-level imports, execute:
+
+> λ: :show imports
+  import Prelude -- implicit
+  import Data.Eq
+  import Control.Monad
 
 
